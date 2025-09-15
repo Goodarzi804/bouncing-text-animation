@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+        }
+        body{
+            width: 100%;
+            height: 100vh;
+            background: #000;
+        }
+        #T{
+            position: absolute;
+            display: flex;
+            font-size: 100px;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-family: tahoma;
+            color: #fff;
+            transition: color 0.2s;
+        }
+        .fa{
+            font-size: 42px;
+            color: #fff;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        .fa:hover{
+            color: rgb(34, 114, 219);
+        }
+        .setting-con{
+            width: 400px;
+            height: 500px;
+            z-index: 10;
+            background-color: rgba(255, 255, 255, 0.692);
+            backdrop-filter: blur(5px);
+            display: none;
+            flex-direction: column;
+            padding: 100px 10px;
+        }
+        .setting-con label{
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+        .box{
+            display: flex;
+            width: 370px;
+            align-items: center;
+            justify-content: space-between;
+            margin: 10px 0;
+        }
+        #glowX , #glowY{
+            all: unset;
+            box-sizing: border-box;
+            width: 35px;
+            background-color: #eee;
+        }
+        .flex{
+            display: flex;
+        }
+        #textInput{
+            all: unset;
+            box-sizing: border-box;
+            width: 320px;
+            background-color: #eee;
+            padding: 5px 10px;
+        }
+        .none{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="T">Text</div>
+    <i class="fa fa-cog"></i>
+    <div class="setting-con">
+         <i class="fa fa-times"></i>
+         <div class="box">
+             <label for="textInput">Text :</label>
+             <input type="text" id="textInput" placeholder="text" autocomplete="off">
+         </div>
+         <div class="box">
+             <label for="textSize">Size :</label>
+             <div class="flex">
+                 <input type="range" id="textSize" min="4" max="200" value="100">
+                 <p>-100-</p>
+             </div>
+         </div>
+         <div class="box">
+             <label for="speedX">Speed x :</label>
+             <div class="flex">
+                 <input type="range" id="speedX" min="1" max="50" value="5">
+                 <p>-5-</p>
+             </div>
+         </div>
+         <div class="box">
+             <label for="speedY">Speed y :</label>
+             <div class="flex">
+                 <input type="range" id="speedY" min="1" max="50" value="5">
+                 <p>-5-</p>
+             </div>
+         </div>
+         <div class="box">
+            <div class="fle">
+                <label for="isGlow">Glow </label>
+                <input type="checkbox" id="isGlow">
+            </div>
+             <div class="flex none">
+                 <label for="glowX">X :</label>
+                 <input type="number" id="glowX" value="0">
+                 <label for="glowY">Y :</label>
+                 <input type="number" id="glowY" value="0">
+                 <label for="glowS">Size :</label>
+                 <input type="range" id="glowS" min="1" value="10">
+                 <p>-10-</p>
+             </div>
+         </div>
+     </div>
+    <script src="app.js"></script>
+</body>
+</html>
